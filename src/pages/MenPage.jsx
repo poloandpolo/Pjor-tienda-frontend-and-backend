@@ -8,6 +8,8 @@ import { ClothingBar } from '../components/ClothingBar';
 import { ClothingGallery } from '../components/ClothingGallery';
 import { useMenPageContext } from '../context/MenPageContext';
 import { ShoppingCart } from '../components/ShoppingCart';
+import { ClothingModal } from '../components/ClothingModal';
+
 
 const dropdownMenus = [
   {
@@ -39,7 +41,11 @@ const dropdownMenus = [
 
 export const MenPage = () => {
   const [isClothingBarOpen, setIsClothingBarOpen] = useState(false);
-  const [shoppingCartIsOpen, setShoppingCartIsOpen] = useState(false); // Inicializar como false
+  const [shoppingCartIsOpen, setShoppingCartIsOpen] = useState(false);
+  const [isClothingModalOpen, setIsClothingModalOpen] = useState(false);
+  const [clothingModalData, setClothingModalData] = useState(null);
+  const [isWarningModalOpen, setIsWarningModalOpen] = useState(false);
+  const [isConfirmationModalOpen, setIsConfirmationModalOpen] = useState(false);
 
   const { clothingItems } = useMenPageContext();
 
@@ -53,6 +59,32 @@ export const MenPage = () => {
 
   const closeShoppingCart = () => {
     setShoppingCartIsOpen(false);
+  };
+
+  const openClothingModal = (item) => {
+    setClothingModalData(item);
+    setIsClothingModalOpen(true);
+  };
+
+  const closeClothingModal = () => {
+    setClothingModalData(null);
+    setIsClothingModalOpen(false);
+  };
+
+  const openWarningModal = () => {
+    setIsWarningModalOpen(true);
+  };
+
+  const closeWarningModal = () => {
+    setIsWarningModalOpen(false);
+  };
+
+  const openConfirmationModal = () => {
+    setIsConfirmationModalOpen(true);
+  };
+
+  const closeConfirmationModal = () => {
+    setIsConfirmationModalOpen(false);
   };
 
   return (
@@ -74,6 +106,13 @@ export const MenPage = () => {
           isOpen={shoppingCartIsOpen}
           onClose={closeShoppingCart}
         />
+        <ClothingModal
+          isOpen={isClothingModalOpen}
+          onClose={closeClothingModal}
+          data={clothingModalData}
+          onWarning={openWarningModal}
+          onConfirm={openConfirmationModal}
+        />
         {isClothingBarOpen && (
           <ClothingBar
             dropdownMenus={dropdownMenus}
@@ -84,6 +123,7 @@ export const MenPage = () => {
         <ClothingGallery
           items={clothingItems}
           isClothingBarOpen={isClothingBarOpen}
+          onOpenClothingModal={openClothingModal}
         />
       </div>
     </div>
