@@ -1,0 +1,42 @@
+.clothing-bar {
+    display: flex;
+    position: relative;
+    width: 22%;
+    flex-direction: column;
+    height: 70%;
+    padding-left: 3vw;
+  
+    &--show {
+      position: fixed;
+      width: 25%;
+      z-index: 500;
+    }
+  
+    &__close-button {
+      all: unset;
+      display: flex;
+      position: absolute;
+      font-family: 'Permanent Marker', cursive;
+      color: brown;
+      transform: translateX(20vw) translateY(-1vw);
+      font-size: 32px;
+      z-index: 500;
+    }
+  
+    @media (max-width: 768px) {
+      display: none;
+  
+      &--show {
+        display: flex;
+        position: fixed;
+        width: 25%;
+        height: 70%;
+        z-index: 500;
+      }
+  
+      &__close-button {
+        transform: translateX(20vw) translateY(-5vw);
+      }
+    }
+  }
+  

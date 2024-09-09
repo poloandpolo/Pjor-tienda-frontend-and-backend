@@ -5,8 +5,18 @@ import { LandingPageHeader } from '../components/LandingPageHeader';
 import './styles/LandingPage.scss';
 import { LandingPageGenderImage } from '../components/LandingPageGenderImage';
 import { LandingPageButton } from '../components/LandingPageButton';
+import { useNavigate } from 'react-router-dom';
 
 export const LandingPage = () => {
+  const navigate = useNavigate();
+
+  const handleClickMen = () => {
+    navigate('/hombre');
+  };
+
+  const handleClickWomen = () => {
+    navigate('/mujer');
+  };
 
   return (
     <div className='landing-page'>
@@ -16,7 +26,7 @@ export const LandingPage = () => {
         <LandingPageGenderImage imagen={women} />
       </div>
       <div className='landing-page__buttons-container'>
-        <LandingPageButton text={"Hombre"} />
+        <LandingPageButton text={"Hombre"} onClick={handleClickMen}/>
         <LandingPageButton text={"Mujer"} />
         <LandingPageButton text={"Media"}/>
         <LandingPageButton text={"Crew "}/>
