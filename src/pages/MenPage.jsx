@@ -9,7 +9,8 @@ import { ClothingGallery } from '../components/ClothingGallery';
 import { useMenPageContext } from '../context/MenPageContext';
 import { ShoppingCart } from '../components/ShoppingCart';
 import { ClothingModal } from '../components/ClothingModal';
-
+import { ConfirmationModal } from '../components/ConfirmationModal';
+import { WarningModal } from '../components/WarningModal'; // Asegúrate de que el nombre coincida con tu archivo
 
 const dropdownMenus = [
   {
@@ -113,6 +114,14 @@ export const MenPage = () => {
           onWarning={openWarningModal}
           onConfirm={openConfirmationModal}
         />
+        <ConfirmationModal
+          isOpen={isConfirmationModalOpen}
+          onClose={closeConfirmationModal}
+        />
+        <WarningModal
+          isOpen={isWarningModalOpen}
+          onClose={closeWarningModal}
+        />
         {isClothingBarOpen && (
           <ClothingBar
             dropdownMenus={dropdownMenus}
@@ -124,6 +133,8 @@ export const MenPage = () => {
           items={clothingItems}
           isClothingBarOpen={isClothingBarOpen}
           onOpenClothingModal={openClothingModal}
+          onConfirm={openConfirmationModal}
+          onWarning={openWarningModal}
         />
       </div>
     </div>

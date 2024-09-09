@@ -5,7 +5,7 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background-color: rgba(0, 0, 0, 0.555);
+      background-color: rgba(0, 0, 0, 0.733);
       z-index: 1000;
       display: flex;
       justify-content: center;
@@ -46,9 +46,9 @@
     &__close-button {
       all: unset;
       color: brown;
-      font-size: 60px;
+      font-size: 83px;
       position: absolute;
-      transform: translateX(.5vw) translateY(-2.1vw);
+      transform: translateX(-.5vw) translateY(-3.1vw);
       z-index: 1500;
     }
   
