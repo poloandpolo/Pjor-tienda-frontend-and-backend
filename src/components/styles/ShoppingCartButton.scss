@@ -1,0 +1,26 @@
+.shopping-cart-button {
+    &__icon {
+      position: fixed;
+      background-color: white;
+      padding: 2px;
+      top: 50%;
+      left: 0;
+      transform: translateY(120%);
+      z-index: 2000;
+      border-radius: 10px;
+      height: 2.5vw;
+      width: 2.5vw;
+    }
+  
+    &__container--hide {
+      display: none;
+    }
+  
+    @media (max-width: 768px) {
+      &__icon {
+        height: 8.5vw;
+        width: 8.5vw;
+      }
+    }
+  }
+  
