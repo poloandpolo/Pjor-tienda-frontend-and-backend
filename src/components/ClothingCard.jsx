@@ -67,12 +67,6 @@ export const ClothingCard = ({ images, text, sizes, colors, id, price, isClothin
                 </Slider>
             </div>
             <button className='clothing-card__modal-button' onClick={handleImageClick}></button>
-            <img
-                className={`clothing-card__cart-icon ${isClothingBarOpen ? 'clothing-card__cart-icon--open' : ''}`}
-                src={add_to_cart_icon}
-                alt="Add to cart"
-                onClick={handleAddToCart}
-            />
             <p className='clothing-card__text'>{text} (${price})</p>
             <div className='clothing-card__details'>
                 <label className='clothing-card__details-size' onClick={openSizeModal}>
@@ -85,6 +79,12 @@ export const ClothingCard = ({ images, text, sizes, colors, id, price, isClothin
                         'Color'
                     )}
                 </label>
+                <img
+                className={`clothing-card__cart-icon ${isClothingBarOpen ? 'clothing-card__cart-icon--open' : ''}`}
+                src={add_to_cart_icon}
+                alt="Add to cart"
+                onClick={handleAddToCart}
+            />
             </div>
             {isSizeModalOpen && (
                 <SizeModal

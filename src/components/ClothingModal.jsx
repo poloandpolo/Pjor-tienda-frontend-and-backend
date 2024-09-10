@@ -97,7 +97,6 @@ export const ClothingModal = ({ isOpen, onClose, data, onWarning, onConfirm }) =
                 onClick={handleAddToCart}
               />
               </div>
-
             </div>
             <SizeModal
               isOpen={isSizeModalOpen}
