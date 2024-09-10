@@ -1,150 +1,155 @@
 .clothing-modal {
-    &__overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.733);
-      z-index: 1000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      visibility: hidden;
-  
-      &--show {
-        visibility: visible;
-      }
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.733);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    &--show {
+      visibility: visible;
+      opacity: 1;
     }
-  
+  }
+
+  &__content {
+    background-color: rgba(0, 0, 0, 0);
+    padding: 20px;
+    border-radius: 10px;
+    width: 48vw;
+    max-height: 100vh;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    transform: translateY(-11.3px);
+    opacity: 1;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    color: black;
+  }
+
+  &__close-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  &__close-button {
+    all: unset;
+    color: brown;
+    font-size: 50px;
+    position: absolute;
+    transform: translateX(-.5vw) translateY(-2vw);
+    z-index: 1500;
+    border: none;
+    outline: none;
+  }
+
+  &__slider-container {
+    width: 95%;
+    height: 100%;
+    margin: auto;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  &__details-label-container {
+    position: absolute;
+    height: 10.2vw;
+    width: 8vw;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; // Alinea los elementos horizontalmente
+    border-radius: 10px;
+    transform: translateX(-2.2vw) translateY(-3vw);
+  }
+
+  &__details-label-size {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.6vw;
+    background-color: rgb(255, 255, 255);
+    z-index: 1;
+    border-radius: 5px;
+    height: 2vw;
+    width: 5vw;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 0; // Muestra la talla primero
+  }
+
+  &__details-label-color {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.6vw;
+    background-color: rgb(255, 255, 255);
+    z-index: 1000;
+    border-radius: 5px;
+    width: 5vw;
+    height: 2vw;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 1; // Muestra el color después de la talla
+
+    & img {
+      height: 2vw;
+      width: 5vw;
+      border-radius: 5px;
+      border: 2px solid black;
+    }
+  }
+
+  &__add-to-cart-icon {
+    background-color: white;
+    width: 5vw;
+    height: 4.8vw;
+    border-radius: 5px;
+    position: relative; // Cambiado a relative para que se alinee correctamente
+    order: 2; // Muestra la imagen al final
+    padding: 3px;
+  }
+
+  &__title-wrapper {
+    transform: translateY(6px);
+  }
+
+  &__title {
+    font-size: 22px;
+  }
+}
+
+/* iPad Air y iPad Pro (resolución 820 x 1180 px) */
+@media only screen and (min-width: 820px) and (max-width: 1024px) and (min-height: 1180px) and (max-height: 1366px) {
+  .clothing-modal {
     &__content {
-      background-color: rgba(0, 0, 0, 0);
-      padding: 20px;
-      border-radius: 10px;
-      width: 48vw;
-      max-height: 100vh;
-      overflow: hidden;
-      position: relative;
-      text-align: center;
-      font-family: 'Permanent Marker', cursive;
-      transform: translateY(-1vw);
-      /* Evita que el contenido se desborde */
-  
-      .slick-prev:before,
-      .slick-next:before {
-        font-size: 24px;
-        color: #ffffff; /* Asegúrate de que el color se aplique */
-      }
-    }
-  
-    &__close-wrapper {
-      display: flex;
-      justify-content: flex-end;
-      width: 100%;
-    }
-  
-    &__close-button {
-      all: unset;
-      color: brown;
-      font-size: 83px;
-      position: absolute;
-      transform: translateX(-.5vw) translateY(-3.1vw);
-      z-index: 1500;
-    }
-  
-    &__slider-container {
-      width: 95%;
-      height: 100%;
-      margin: auto;
-    }
-  
-    &__image {
-      width: 100%;
-      height: auto;
-    }
-  
-    &__details-label-container {
-      position: relative;
-    }
-  
-    &__details-label-color {
-      font-family: 'Permanent Marker', cursive;
-      font-size: 1.6vw;
-      position: absolute;
-      background-color: rgb(255, 255, 255);
-      z-index: 1500;
-      bottom: 9.8vw;
-      right: 3vw;
-      border-radius: 5px;
-      width: 5vw;
-      height: 2vw;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  
-      & img {
-        height: 2vw;
-        width: 5vw;
-        border-radius: 5px;
-        border: 2px solid black;
-      }
-    }
-  
-    &__details-label-size {
-      font-family: 'Permanent Marker', cursive;
-      font-size: 1.6vw;
-      position: absolute;
-      background-color: rgb(255, 255, 255);
-      z-index: 1;
-      bottom: 12.6vw;
-      right: 3vw;
-      border-radius: 5px;
-      height: 2vw;
-      width: 5vw;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  
-    &__add-to-cart-icon {
-      background-color: white;
-      width: 5vw;
-      height: 4.8vw;
-      padding: 0;
-      border-radius: 5px;
-      position: absolute;
-      bottom: 4.5vw;
-      right: 3vw;
-      padding: 2px;
-    }
-  
-    &__title-wrapper {
-      transform: translateY(6px);
-    }
-  
-    &__title {
-      font-size: 22px;
+      width: 95vw;
+      transform: translateY(-5px);
     }
   }
-  
-  /* Estilos específicos para dispositivos con tamaños y resoluciones específicas */
-  @media only screen and (min-width: 1024px) and (max-width: 1280px) and (min-height: 600px) and (max-height: 800px) and (orientation: landscape) {
-    .clothing-modal__content {
-      width: 53vw;
+}
+
+@media only screen and (min-width: 1180px) and (max-width: 1366px) and (min-height: 820px) and (max-height: 1180px) {
+  .clothing-modal {
+    &__content {
+      width: 70vw;
+      transform: translateY(-5px);
     }
   }
-  
-  @media only screen and (min-width: 1024px) and (max-width: 1024px) and (min-height: 1366px) and (max-height: 1366px) and (orientation: portrait) {
-    .clothing-modal__content {
-      width: 80vw;
-    }
-  }
-  
-  @media only screen and (min-width: 1366px) and (max-width: 1366px) and (min-height: 1024px) and (max-height: 1024px) and (orientation: landscape) {
-    .clothing-modal__content {
-      width: 65vw;
-    }
-  }
-  
+}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Slider from 'react-slick';
-import './styles/ClothingModal.scss'; // Asegúrate de actualizar el nombre del archivo si es necesario
+import './styles/ClothingModal.scss'; // Asegúrate de que la ruta sea correcta
 import addToCartIcon from '/bolsa-de-la-compra.png';
 import { SizeModal } from './SizeModal';
 import { ColorModal } from './ColorModal';
@@ -13,7 +13,8 @@ export const ClothingModal = ({ isOpen, onClose, data, onWarning, onConfirm }) =
   const [selectedColor, setSelectedColor] = useState(null);
   const { addToCart } = useMenPageContext();
 
-  if (!data) return null;
+  // Verificar si hay datos
+  const hasData = data && data.images && data.images.length > 0;
 
   const settings = {
     dots: false,
@@ -62,54 +63,58 @@ export const ClothingModal = ({ isOpen, onClose, data, onWarning, onConfirm }) =
       onClick={onClose}
     >
       <div
-        className="clothing-modal__content"
+        className={`clothing-modal__content ${isOpen ? 'clothing-modal__content--show' : ''}`}
         onClick={(e) => e.stopPropagation()}
       >
         <div className='clothing-modal__close-wrapper'>
           <button className='clothing-modal__close-button' onClick={onClose}>X</button>
         </div>
-        <div className='clothing-modal__slider-container'>
-          <Slider {...settings}>
-            {data.images.map((image, index) => (
-              <div key={index}>
-                <img src={image} alt={`clothing-${index}`} className='clothing-modal__image' />
+        {hasData ? (
+          <>
+            <div className='clothing-modal__slider-container'>
+              <Slider {...settings}>
+                {data.images.map((image, index) => (
+                  <div key={index}>
+                    <img src={image} alt={`clothing-${index}`} className='clothing-modal__image' />
+                  </div>
+                ))}
+              </Slider>
+              <div className='clothing-modal__details-label-container'>
+                <label className='clothing-modal__details-label-size' onClick={openSizeModal}>
+                  {selectedSize ? selectedSize : 'Talla'}
+                </label>
+                <label className='clothing-modal__details-label-color' onClick={openColorModal}>
+                  {selectedColor ? (
+                    <img src={selectedColor} alt="Selected Color" className='clothing-modal__selected-color-thumbnail' />
+                  ) : (
+                    'Color'
+                  )}
+                </label>
+                <img
+                className='clothing-modal__add-to-cart-icon'
+                src={addToCartIcon}
+                alt="Add to cart"
+                onClick={handleAddToCart}
+              />
               </div>
-            ))}
-          </Slider>
-          <div className='clothing-modal__details-label-container'>
-            <label className='clothing-modal__details-label-color' onClick={openColorModal}>
-              {selectedColor ? (
-                <img src={selectedColor} alt="Selected Color" className='clothing-modal__selected-color-thumbnail' />
-              ) : (
-                'Color'
-              )}
-            </label>
-            <label className='clothing-modal__details-label-size' onClick={openSizeModal}>
-              {selectedSize ? selectedSize : 'Talla'}
-            </label>
-          </div>
 
-          <img
-            className='clothing-modal__add-to-cart-icon'
-            src={addToCartIcon}
-            alt="Add to cart"
-            onClick={handleAddToCart}
-          />
-         
-
-        </div>
-        <SizeModal
-          isOpen={isSizeModalOpen}
-          onClose={closeSizeModal}
-          sizes={data.sizes || []}
-          onSelectSize={setSelectedSize}
-        />
-        <ColorModal
-          isOpen={isColorModalOpen}
-          onClose={closeColorModal}
-          colors={data.colors || []}
-          onSelectColor={setSelectedColor}
-        />
+            </div>
+            <SizeModal
+              isOpen={isSizeModalOpen}
+              onClose={closeSizeModal}
+              sizes={data.sizes || []}
+              onSelectSize={setSelectedSize}
+            />
+            <ColorModal
+              isOpen={isColorModalOpen}
+              onClose={closeColorModal}
+              colors={data.colors || []}
+              onSelectColor={setSelectedColor}
+            />
+          </>
+        ) : (
+          <p>No hay información disponible.</p>
+        )}
       </div>
     </div>
   );
