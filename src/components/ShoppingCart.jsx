@@ -6,8 +6,8 @@ import { useMenPageContext } from '../context/MenPageContext';
 export const ShoppingCart = ({ isOpen, onClose }) => {
     const { cartItems } = useMenPageContext();
 
-    const cartCards = cartItems.map((item, index) => (
-        <ShoppingCartCard key={index} item={item} />
+    const cartCards = cartItems.map((item) => (
+        <ShoppingCartCard key={item.id} item={item} /> // Usar item.id como clave
     ));
 
     return (

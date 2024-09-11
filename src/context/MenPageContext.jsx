@@ -40,11 +40,12 @@ export const MenPageContextProvider = ({ children }) => {
         });
     };
 
-
-    const updateItemQuantity = (id, amount) => {
+    const updateItemQuantity = (id, size, color, amount) => {
         setCartItems(prevItems => {
             return prevItems.map(item =>
-                item.id === id ? { ...item, quantity: item.quantity + amount } : item
+                item.id === id && item.size === size && item.color === color
+                    ? { ...item, quantity: item.quantity + amount }
+                    : item
             ).filter(item => item.quantity > 0); // Elimina artículos con cantidad <= 0
         });
     };

@@ -6,11 +6,11 @@ export const ShoppingCartCard = ({ item }) => {
     const { updateItemQuantity } = useMenPageContext();
 
     const handleIncrement = () => {
-        updateItemQuantity(item.id, 1);
+        updateItemQuantity(item.id, item.size, item.color, 1);
     };
 
     const handleDecrement = () => {
-        updateItemQuantity(item.id, -1);
+        updateItemQuantity(item.id, item.size, item.color, -1);
     };
 
     // Calcular el total directamente
@@ -43,7 +43,7 @@ export const ShoppingCartCard = ({ item }) => {
                         <button onClick={handleIncrement}>+</button>
                     </div>
                     <div className="shopping-cart-card__price-container">
-                        <label>Total: {`$${totalPrice.toFixed(2)}`}</label>
+                        <label>Total: ${totalPrice.toFixed(2)}</label>
                     </div>
                 </div>
             </div>

@@ -33,9 +33,26 @@
         font-family: 'Permanent Marker', cursive;
         font-size: 20px;
         z-index: 1500;
+        color: black;
     }
 
     &__content p {
         margin: 0; /* Remover margen */
+    }
+}
+
+@media (max-width: 768px) {
+    .warning-modal {
+        &__overlay {
+            height: 5vw;
+            width: 80vw;
+            top: 20%; // Ajusta la posición vertical
+        }
+
+        &__content {
+            height: 5vw;
+            width: 80vw;
+            font-size: 16px; // Ajusta el tamaño de fuente para dispositivos móviles
+        }
     }
 }
