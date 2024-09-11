@@ -55,16 +55,14 @@
         position: relative;
         padding: 1.5px;
 
-    &--open{
-        background-color: white;
-        width: 4.5vw;
-        height: 4.2vw;
-        border-radius: 5px;
-        position: absolute;
-        bottom: 1.9vw;
-        right: 2.2vw;
-        padding: 1.5px;
-    }
+        &--open {
+            background-color: white;
+            width: 4.5vw;
+            height: 4.2vw;
+            border-radius: 5px;
+            position: relative;
+            padding: 1.5px;
+        }
     }
 
     &__details {
@@ -81,7 +79,7 @@
         justify-content: space-evenly;
         color: black;
         height: 10vw;
-        
+
 
     }
 
@@ -128,35 +126,44 @@
             height: 60vw;
             margin-bottom: 30px;
         }
-        
+
         &__modal-button {
             display: none;
         }
 
-        &__text{
+        &__text {
             margin-top: 10px;
             font-size: 4vw;
         }
 
-        &__details{
-            top:50vw;
+        &__details {
+            top: 50vw;
             right: 3vw;
             height: 28vw;
+
+            &--open{
+                top:30vw;
+            }
         }
 
-        &__details-color{
+        &__details-color {
+            width: 12vw;
+            height: 5vw;
+            font-size: 3.5vw;
+
+            .clothing-card__color-thumbnail {
+                width: 12vw;
+                height: 5vw;
+            }
+        }
+
+        &__details-size {
             width: 12vw;
             height: 5vw;
             font-size: 3.5vw;
         }
 
-        &__details-size{
-            width: 12vw;
-            height: 5vw;
-            font-size: 3.5vw;
-        }
-
-        &__cart-icon{
+        &__cart-icon {
             width: 12vw;
             height: 12vw;
         }

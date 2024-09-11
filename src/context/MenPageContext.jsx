@@ -26,8 +26,8 @@ export const MenPageContextProvider = ({ children }) => {
 
     const addToCart = (item) => {
         setCartItems(prevItems => {
-            const existingItemIndex = prevItems.findIndex(cartItem => 
-                cartItem.id === item.id && cartItem.size === item.size // Verifica tamaño junto con id
+            const existingItemIndex = prevItems.findIndex(cartItem =>
+                cartItem.id === item.id && cartItem.size === item.size && cartItem.color === item.color // Verifica tamaño y color junto con id
             );
 
             if (existingItemIndex > -1) {
@@ -40,9 +40,10 @@ export const MenPageContextProvider = ({ children }) => {
         });
     };
 
+
     const updateItemQuantity = (id, amount) => {
         setCartItems(prevItems => {
-            return prevItems.map(item => 
+            return prevItems.map(item =>
                 item.id === id ? { ...item, quantity: item.quantity + amount } : item
             ).filter(item => item.quantity > 0); // Elimina artículos con cantidad <= 0
         });

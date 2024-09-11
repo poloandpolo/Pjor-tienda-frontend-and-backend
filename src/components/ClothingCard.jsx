@@ -68,7 +68,7 @@ export const ClothingCard = ({ images, text, sizes, colors, id, price, isClothin
             </div>
             <button className='clothing-card__modal-button' onClick={handleImageClick}></button>
             <p className='clothing-card__text'>{text} (${price})</p>
-            <div className='clothing-card__details'>
+            <div className={`clothing-card__details ${isClothingBarOpen ? 'clothing-card__details--open' : ''}`}>
                 <label className='clothing-card__details-size' onClick={openSizeModal}>
                     {selectedSize ? selectedSize : 'Talla'}
                 </label>

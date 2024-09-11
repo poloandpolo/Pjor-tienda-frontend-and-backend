@@ -1,71 +1,95 @@
 .shopping-cart-card {
-    font-family: 'Permanent Marker', cursive;
-    margin-bottom: 30px;
-    transform: translateX(-1vw);
+  font-family: 'Permanent Marker', cursive;
+  margin-bottom: 30px;
+  transform: translateX(-1vw);
+  display: flex;
+  color: #000000;
+
+  &__image-wrapper {
+
+    /* Estilos para el contenedor de la imagen */
+    img {
+      height: 20vw;
+      width: 20vw;
+      margin: auto;
+      border-radius: 5px;
+    }
+  }
+
+  &__text-container {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-left: 20px;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  &__details-container {
+    justify-content: center;
+    text-align: left;
+    margin-top: 10px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 15px;
+  }
+
+  &__color-container {
+    margin-top: 10px;
+
+    & img {
+      width: 22px;
+      height: 22px;
+      transform: translateY(5px);
+      background-color: #eee;
+      /* Asegúrate de que la imagen tenga un fondo visible */
+      border-radius: 50%;
+      /* Asegúrate de que el estilo sea visible */
+      border: 2px solid #000000;
+      /* Añadir un borde para ver el contorno */
+    }
+  }
+
+  &__size-container {
+    margin-top: 10px;
+  }
+
+  &__price-container {
+    margin-top: 10px;
+  }
+
+  &__counter-container {
+    display: flex;
+    margin-top: 10px;
+
+    label {
+      margin-right: 5px;
+    }
+
+    button {
+      all: unset;
+      color: brown;
+      cursor: pointer;
+      /* Agregado para indicar interactividad */
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .shopping-cart-card {
+    margin-bottom: 10px;
 
     &__image-wrapper {
-      /* Estilos para el contenedor de la imagen */
       img {
-        height: 20vw;
-        width: 20vw;
-        margin: auto;
+        height: 44vw;
+        width: 44vw;
+        margin: 10% auto;
         border-radius: 5px;
       }
     }
-
     &__text-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      margin-left: 20px;
-      width: 100%;
-      margin-bottom: 30px;
+      font-size: 17px;
     }
-
-    &__details-container {
-      justify-content: center;
-      text-align: left;
-      margin-top: 10px;
-      font-family: 'Permanent Marker', cursive;
-      font-size: 15px;
-    }
-
-    &__color-container {
-      margin-top: 10px;
-
-      & img {
-        width: 22px;
-        height: 22px;
-        transform: translateY(5px);
-        background-color: #eee; /* Asegúrate de que la imagen tenga un fondo visible */
-        border-radius: 50%; /* Asegúrate de que el estilo sea visible */
-        border: 2px solid #000000; /* Añadir un borde para ver el contorno */
-      }
-    }
-
-    &__size-container {
-      margin-top: 10px;
-    }
-
-    &__price-container {
-      margin-top: 10px;
-    }
-
-    &__counter-container {
-      display: flex;
-      margin-top: 10px;
-
-      label {
-        margin-right: 5px;
-      }
-
-      button {
-        all: unset;
-        color: brown;
-        cursor: pointer; /* Agregado para indicar interactividad */
-      }
-    }
+  }
 }

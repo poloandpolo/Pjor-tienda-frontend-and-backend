@@ -36,6 +36,7 @@
     &__title {
       font-family: 'Permanent Marker', cursive;
       margin: auto;
+      color: black;
     }
   
     &__close-wrapper {
@@ -58,6 +59,15 @@
       flex: 1;
       overflow-y: auto; /* Permite el desplazamiento vertical */
       margin-top: 10px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .shopping-cart {
+      &__content {
+        width: 90%;
+      }
+
     }
   }
   
