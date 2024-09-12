@@ -2,7 +2,7 @@ import React from 'react';
 import './styles/CheckOutButton.scss';
 import { useMenPageContext } from '../context/MenPageContext'; // Importa el contexto
 
-export const CheckOutButton = () => {
+export const CheckoutButton = () => {
   const { cartItems } = useMenPageContext(); // Accede a los items del carrito desde el contexto
 
   // Calcula el total sumando el precio de cada item multiplicado por su cantidad

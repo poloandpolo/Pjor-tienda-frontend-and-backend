@@ -2,7 +2,7 @@ import React from 'react';
 import './styles/ShoppingCart.scss';
 import { ShoppingCartCard } from './ShoppingCartCard';
 import { useMenPageContext } from '../context/MenPageContext';
-import { CheckOutButton } from './CheckoutButton';
+import { CheckoutButton } from './CheckoutButton';
 
 export const ShoppingCart = ({ isOpen, onClose }) => {
     const { cartItems } = useMenPageContext();
@@ -19,7 +19,7 @@ export const ShoppingCart = ({ isOpen, onClose }) => {
                 </div>
                 <h2 className='shopping-cart__title'>Carrito de Compras</h2>
                 <div className='shopping-cart__checkout-button-wrapper'>
-                    <CheckOutButton/>
+                    <CheckoutButton/>
                 </div>
                 <div className="shopping-cart__items">
                     {cartCards}
