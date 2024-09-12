@@ -89,7 +89,47 @@
       }
     }
     &__text-container {
-      font-size: 17px;
+      font-size: 16px;
+    }
+    &__details-container {
+      font-size: 13px;
+    }
+  }
+}
+
+  /* iPad Air (820 x 1180 px) */
+/* iPad Air (820 x 1180 px) y iPad Pro (1024 x 1366 px) */
+@media only screen and (min-width: 820px) and (max-width: 1024px) and (min-height: 1180px) and (max-height: 1266px) {
+  .shopping-cart-card {
+    &__image-wrapper {
+      img {
+        height: 35vw;
+        width: 35vw;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 820px) and (max-width: 1024px) and (min-height: 1267px) and (max-height: 1366px) {
+  .shopping-cart-card {
+    &__image-wrapper {
+      img {
+        height: 25vw;
+        width: 25vw;
+      }
+    }
+  }
+}
+
+
+
+@media only screen and (min-width: 1180px) and (max-width: 1366px) and (min-height: 820px) and (max-height: 1024px) {
+  .shopping-cart-card {
+    &__image-wrapper {
+      img{
+        height: 20vw;
+        width: 20vw;
+      }
     }
   }
 }

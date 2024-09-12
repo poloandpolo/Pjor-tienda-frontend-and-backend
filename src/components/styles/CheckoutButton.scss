@@ -1,0 +1,26 @@
+.checkout-button__container {
+    width: 50%;
+    height: 2.5vw;
+    background-color: black;
+    color: white;
+    margin: 10px auto;
+    border-radius: 10px;
+    display: flex; /* Asegura que el contenido sea flexible */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    text-align: center;
+    font-family: 'Permanent Marker', cursive; /* Asegúrate de que la fuente esté correctamente importada */
+  
+    label {
+      margin: 0; /* No necesita margen adicional */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .checkout-button__container {
+        height: 5vw;
+        label{
+            font-size: 10px;
+        }
+    }
+  }
