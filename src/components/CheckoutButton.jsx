@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/CheckOutButton.scss';
+import './styles/CheckoutButton.scss';
 import { useMenPageContext } from '../context/MenPageContext'; // Importa el contexto
 
 export const CheckoutButton = () => {
