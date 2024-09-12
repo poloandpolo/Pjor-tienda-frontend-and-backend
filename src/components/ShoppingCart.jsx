@@ -2,7 +2,7 @@ import React from 'react';
 import './styles/ShoppingCart.scss';
 import { ShoppingCartCard } from './ShoppingCartCard';
 import { useMenPageContext } from '../context/MenPageContext';
-import { CheckOutButton } from './CheckOutButton';
+import { CheckOutButton } from './CheckoutButton';
 
 export const ShoppingCart = ({ isOpen, onClose }) => {
     const { cartItems } = useMenPageContext();
