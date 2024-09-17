@@ -3,7 +3,8 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 columnas para los pares */
     gap: 16px; /* Espacio entre las tarjetas */
-    transform: translateX(8.6vw); 
+    transform: translateX(8.6vw);
+    transition: transform 0.5s ease, width 0.5s ease; /* Transición añadida */
 }
 
 /* Modificador para cuando la barra de ropa está abierta */
@@ -20,11 +21,13 @@
         width: 100vw;
         grid-template-columns: 1fr; /* 1 columna para pantallas más pequeñas */
         transform: translateX(10vw);
+        transition: transform 0.5s ease, width 0.5s ease; /* Transición añadida */
     }
 
     .clothing-gallery--with-clothing-bar {
         width: 100vw;
         grid-template-columns: 1fr; /* 1 columna para pantallas más pequeñas */
         transform: translateX(32vw);
+        transition: transform 0.5s ease, width 0.5s ease; /* Transición añadida */
     }
 }

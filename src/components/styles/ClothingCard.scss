@@ -11,12 +11,14 @@
     padding: 1.5vw;
     position: relative;
     color: black;
+    transition: width 0.08s ease, height 0.4s ease;
 
     &--open {
         /* Modificador para cuando la barra de ropa está abierta */
         width: 36vw;
         height: 36vw;
         margin-bottom: 30px;
+        
     }
 
     &__slider {
@@ -124,7 +126,7 @@
         &--open {
             width: 60vw;
             height: 60vw;
-            margin-bottom: 30px;
+            margin-bottom: 50px;
         }
 
         &__modal-button {

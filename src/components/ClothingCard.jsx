@@ -19,8 +19,10 @@ export const ClothingCard = ({ images, text, sizes, colors, id, price, isClothin
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: true,
+        arrows: !isClothingBarOpen,
     };
+
+    console.log(isClothingBarOpen)
 
     const handleAddToCart = () => {
         if (!selectedSize || !selectedColor) {
