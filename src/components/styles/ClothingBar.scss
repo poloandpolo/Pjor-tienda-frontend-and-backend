@@ -1,18 +1,23 @@
 .clothing-bar {
-    display: flex;
-    position: relative;
-    width: 22%;
-    flex-direction: column;
-    height: 70%;
-    padding-left: 3vw;
+  display: flex;
+  position: relative;
+  width: 22%;
+  flex-direction: column;
+  height: 70%;
+  padding-left: 3vw;
+  opacity: 0;
+  transform: translateX(-100%); /* Inicialmente oculta fuera de la vista */
   
-    &--show {
+
+  &--show {
+      opacity: 1;
+      transform: translateX(0); /* Mueve la barra a su posición visible */
       position: fixed;
       width: 25%;
       z-index: 500;
-    }
-  
-    &__close-button {
+  }
+
+  &__close-button {
       all: unset;
       display: flex;
       position: absolute;
@@ -21,22 +26,24 @@
       transform: translateX(20vw) translateY(-1vw);
       font-size: 32px;
       z-index: 500;
-    }
-  
-    @media (max-width: 768px) {
-      display: none;
-  
-      &--show {
-        display: flex;
-        position: fixed;
-        width: 25%;
-        height: 70%;
-        z-index: 500;
-      }
-  
-      &__close-button {
-        transform: translateX(23.3vw) translateY(-5vw);
-      }
-    }
+      transition: transform 0.3s ease-in-out;
   }
-  
+
+  @media (max-width: 768px) {
+      display: none;
+
+      &--show {
+          display: flex;
+          position: fixed;
+          width: 25%;
+          height: 70%;
+          z-index: 500;
+          opacity: 1;
+          transform: translateX(0); /* Asegura que se muestre correctamente en pantallas pequeñas */
+      }
+
+      &__close-button {
+          transform: translateX(23.3vw) translateY(-5vw);
+      }
+  }
+}

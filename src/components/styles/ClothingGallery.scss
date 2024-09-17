@@ -21,13 +21,13 @@
         width: 100vw;
         grid-template-columns: 1fr; /* 1 columna para pantallas más pequeñas */
         transform: translateX(10vw);
-        transition: transform 0.5s ease, width 0.5s ease; /* Transición añadida */
+        transition: transform 0.8s ease, width 1s ease; /* Transición añadida */
     }
 
     .clothing-gallery--with-clothing-bar {
         width: 100vw;
         grid-template-columns: 1fr; /* 1 columna para pantallas más pequeñas */
         transform: translateX(32vw);
-        transition: transform 0.5s ease, width 0.5s ease; /* Transición añadida */
+        transition: transform 0.8s ease, width 10000s ease; /* Transición añadida */
     }
 }
