@@ -28,6 +28,6 @@
         width: 100vw;
         grid-template-columns: 1fr; /* 1 columna para pantallas más pequeñas */
         transform: translateX(32vw);
-        transition: transform 0.95s ease, width 10000s ease; /* Transición añadida */
+        transition: transform 1.1s ease, width 10000s ease; /* Transición añadida */
     }
 }
