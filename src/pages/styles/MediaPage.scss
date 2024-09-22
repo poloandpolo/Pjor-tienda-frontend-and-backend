@@ -4,3 +4,34 @@
     background-size: cover;
     background-image: url('/src/images/background-media-page.JPG');
 }
+
+.media-page__leeve-breaks{
+    margin: 50px 0 0 0 ;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; // Espacio entre los párrafos
+    h2{
+        font-family: Permanent Marker;
+        color: black;
+        margin: auto;
+        text-align: center;
+        margin: 0 0 20px 0;
+        font-size: 35px;
+    }
+    p{
+        text-align: justify;
+        color: black;
+        margin: 0 100px;
+        backdrop-filter: blur(20px);
+        font-family: Barlow Condensed;        
+        font-size: 23.5px;
+        line-height: 38.5px;
+        letter-spacing: 1.05px;
+    }
+    iframe {
+        margin: 30px 100px; // Alineado con el texto
+        width: calc(100% - 200px); // Para que ocupe el ancho correcto
+        height: 40vw; // Mantener proporción
+    }
+}

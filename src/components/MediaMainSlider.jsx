@@ -2,7 +2,7 @@ import React from 'react';
 import './styles/MediaMainSlider.scss';
 import Slider from 'react-slick';
 import Leeve_breaks from '../images/Media_Thumbnails/Leeve_breaks.jpg';
-import Concurso from '../images/Media_Thumbnails/Concurso.JPG';
+import Concurso from '../images/Media_Thumbnails/Concurso.jpg';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -16,7 +16,7 @@ export const MediaMainSlider = () => {
         autoplay: true, // Activar el autoplay
         autoplaySpeed: 6000, // 3 segundos entre cambios de imagen
         arrows: true, // Mostrar las flechas de navegación
-        pauseOnHover: false, // Autoplay no se detiene al pasar el mouse
+        pauseOnHover: true, // Autoplay no se detiene al pasar el mouse
       };
 
   return (

@@ -1,5 +1,4 @@
 .media-main-slider {
-    background-color: aqua;
     width: 100vw;
     height: 90vh; // Ajustado al tamaño de la imagen
     margin: auto;
@@ -46,7 +45,7 @@
   
       // Mover la flecha derecha (next)
       .slick-next {
-        right: 10px; // Ajusta la distancia desde el borde derecho
+        right: 30px; // Ajusta la distancia desde el borde derecho
         top: 50%; // Centrar la flecha verticalmente
         transform: translateY(-50%); // Corregir la posición exacta
       }
