@@ -5,6 +5,7 @@ import { LandingPage } from './pages/LandingPage'
 import { MenPageContextProvider } from './context/MenPageContext';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { MediaPage } from './pages/MediaPage';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
               <MenPage />
             </MenPageContextProvider>
           } />
+          <Route path='media' element={<MediaPage />} />
         </Routes>
       </BrowserRouter>
     </div>

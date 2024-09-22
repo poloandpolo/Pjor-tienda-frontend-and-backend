@@ -18,6 +18,10 @@ export const LandingPage = () => {
     navigate('/mujer');
   };
 
+  const handleClickMedia = () => {
+    navigate('/media');
+  };
+
   return (
     <div className='landing-page'>
       <LandingPageHeader />
@@ -28,7 +32,7 @@ export const LandingPage = () => {
       <div className='landing-page__buttons-container'>
         <LandingPageButton text={"Hombre"} onClick={handleClickMen}/>
         <LandingPageButton text={"Mujer"} />
-        <LandingPageButton text={"Media"}/>
+        <LandingPageButton text={"Media"} onClick={handleClickMedia}/>
         <LandingPageButton text={"Crew "}/>
         <LandingPageButton text={"Vision"}/>
       </div>
