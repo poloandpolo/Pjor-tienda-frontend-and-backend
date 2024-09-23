@@ -31,7 +31,7 @@ export const LandingPage = () => {
       </div>
       <div className='landing-page__buttons-container'>
         <LandingPageButton text={"Hombre"} onClick={handleClickMen}/>
-        <LandingPageButton text={"Mujer"} />
+        <LandingPageButton text={"Mujer"} onClick={handleClickWomen}/>
         <LandingPageButton text={"Media"} onClick={handleClickMedia}/>
         <LandingPageButton text={"Crew "}/>
         <LandingPageButton text={"Vision"}/>

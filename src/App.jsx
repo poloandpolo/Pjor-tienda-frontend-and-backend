@@ -1,14 +1,14 @@
-import './App.css'
+import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { MenPage } from './pages/MenPage'
-import { LandingPage } from './pages/LandingPage'
+import { MenPage } from './pages/MenPage';
+import { LandingPage } from './pages/LandingPage';
 import { MenPageContextProvider } from './context/MenPageContext';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { MediaPage } from './pages/MediaPage';
+import { WomenPage } from './pages/WomenPage'; // Importa el componente WomenPage
 
 function App() {
-
   return (
     <div className='body'>
       <BrowserRouter>
@@ -19,11 +19,16 @@ function App() {
               <MenPage />
             </MenPageContextProvider>
           } />
+          <Route path='mujer' element={
+             <MenPageContextProvider>
+             <WomenPage />
+           </MenPageContextProvider>
+          } />
           <Route path='media' element={<MediaPage />} />
         </Routes>
       </BrowserRouter>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

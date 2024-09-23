@@ -48,7 +48,7 @@ export const MenPage = () => {
   const [isWarningModalOpen, setIsWarningModalOpen] = useState(false);
   const [isConfirmationModalOpen, setIsConfirmationModalOpen] = useState(false);
 
-  const { clothingItems } = useMenPageContext();
+  const { menClothingItems } = useMenPageContext();
 
   const toggleClothingBar = () => {
     setIsClothingBarOpen(prevState => !prevState);
@@ -130,7 +130,7 @@ export const MenPage = () => {
           />
         )}
         <ClothingGallery
-          items={clothingItems}
+          items={menClothingItems}
           isClothingBarOpen={isClothingBarOpen}
           onOpenClothingModal={openClothingModal}
           onConfirm={openConfirmationModal}

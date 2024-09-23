@@ -18,6 +18,9 @@
     &__item {
       display: flex;
       align-items: center;
+      :hover{
+        cursor: pointer;
+      }
     }
   
     &__link {

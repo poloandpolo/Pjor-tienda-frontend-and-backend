@@ -1,6 +1,8 @@
 import React, { createContext, useContext, useState } from 'react';
 import playera_logo_clasica_hombre from '../images/playera_logo_clasica_hombre.jpg';
 import playera_logo_clasica_hombre_2 from '../images/playera_logo_clasica_hombre.jpg';
+import playera_logo_clasica_mujer from '../images/playera_logo_clasica_mujer.jpg';
+import playera_logo_clasica_mujer_2 from '../images/playera_logo_clasica_mujer.jpg';
 import black from '../images/Clothing_Colors/Black.jpg';
 import white from '../images/Clothing_Colors/white.jpg';
 
@@ -15,19 +17,32 @@ export const useMenPageContext = () => {
 // Proveedor del contexto
 export const MenPageContextProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState([]);
-    const clothingItems = [
-        { id: 1, images: [playera_logo_clasica_hombre, playera_logo_clasica_hombre_2], text: "Playera logo clásica", sizes: ['s', 'm', 'l', 'xl', 'xxl'], colors: [black, white], price: 100 },
-        { id: 2, images: [playera_logo_clasica_hombre, playera_logo_clasica_hombre_2], text: "Playera logo clásica 2", sizes: ['s', 'm', 'l', 'xl', 'xxl'], colors: [black, white], price: 100 },
-        { id: 3, images: [playera_logo_clasica_hombre, playera_logo_clasica_hombre_2], text: "Playera logo clásica 3", sizes: ['s', 'm', 'l', 'xl', 'xxl'], colors: [black, white], price: 100 },
-        { id: 4, images: [playera_logo_clasica_hombre, playera_logo_clasica_hombre_2], text: "Playera logo clásica 4", sizes: ['s', 'm', 'l', 'xl', 'xxl'], colors: [black, white], price: 100 },
-        { id: 5, images: [playera_logo_clasica_hombre, playera_logo_clasica_hombre_2], text: "Playera logo clásica 5", sizes: ['s', 'm', 'l', 'xl', 'xxl'], colors: [black, white], price: 100 },
-        { id: 6, images: [playera_logo_clasica_hombre, playera_logo_clasica_hombre_2], text: "Playera logo clásica 6", sizes: ['s', 'm', 'l', 'xl', 'xxl'], colors: [black, white], price: 100 }
+    
+    // Artículos de ropa para hombres
+    const menClothingItems = [
+        { id: 1, images: [playera_logo_clasica_hombre, playera_logo_clasica_hombre_2], text: "Playera logo clásica hombre", sizes: ['s', 'm', 'l', 'xl', 'xxl'], colors: [black, white], price: 100 },
+        { id: 2, images: [playera_logo_clasica_hombre, playera_logo_clasica_hombre_2], text: "Playera logo clásica hombre 2", sizes: ['s', 'm', 'l', 'xl', 'xxl'], colors: [black, white], price: 100 },
+        { id: 3, images: [playera_logo_clasica_hombre, playera_logo_clasica_hombre_2], text: "Playera logo clásica hombre 3", sizes: ['s', 'm', 'l', 'xl', 'xxl'], colors: [black, white], price: 100 },
+        { id: 4, images: [playera_logo_clasica_hombre, playera_logo_clasica_hombre_2], text: "Playera logo clásica hombre 4", sizes: ['s', 'm', 'l', 'xl', 'xxl'], colors: [black, white], price: 100 },
+        { id: 5, images: [playera_logo_clasica_hombre, playera_logo_clasica_hombre_2], text: "Playera logo clásica hombre 5", sizes: ['s', 'm', 'l', 'xl', 'xxl'], colors: [black, white], price: 100 },
+        { id: 6, images: [playera_logo_clasica_hombre, playera_logo_clasica_hombre_2], text: "Playera logo clásica hombre 6", sizes: ['s', 'm', 'l', 'xl', 'xxl'], colors: [black, white], price: 100 }
     ];
+
+    // Artículos de ropa para mujeres
+    const womenClothingItems = [
+        { id: 7, images: [playera_logo_clasica_mujer, playera_logo_clasica_mujer_2], text: "Playera logo clásica mujer", sizes: ['s', 'm', 'l', 'xl', 'xxl'], colors: [black, white], price: 100 },
+        { id: 8, images: [playera_logo_clasica_mujer, playera_logo_clasica_mujer_2], text: "Playera logo clásica mujer 2", sizes: ['s', 'm', 'l', 'xl', 'xxl'], colors: [black, white], price: 100 },
+        { id: 9, images: [playera_logo_clasica_mujer, playera_logo_clasica_mujer_2], text: "Playera logo clásica mujer 3", sizes: ['s', 'm', 'l', 'xl', 'xxl'], colors: [black, white], price: 100 },
+        { id: 10, images: [playera_logo_clasica_mujer, playera_logo_clasica_mujer_2], text: "Playera logo clásica mujer 4", sizes: ['s', 'm', 'l', 'xl', 'xxl'], colors: [black, white], price: 100 },
+        { id: 11, images: [playera_logo_clasica_mujer, playera_logo_clasica_mujer_2], text: "Playera logo clásica mujer 5", sizes: ['s', 'm', 'l', 'xl', 'xxl'], colors: [black, white], price: 100 },
+        { id: 12, images: [playera_logo_clasica_mujer, playera_logo_clasica_mujer_2], text: "Playera logo clásica mujer 6", sizes: ['s', 'm', 'l', 'xl', 'xxl'], colors: [black, white], price: 100 }
+    ];
+
 
     const addToCart = (item) => {
         setCartItems(prevItems => {
             const existingItemIndex = prevItems.findIndex(cartItem =>
-                cartItem.id === item.id && cartItem.size === item.size && cartItem.color === item.color // Verifica tamaño y color junto con id
+                cartItem.id === item.id && cartItem.size === item.size && cartItem.color === item.color
             );
 
             if (existingItemIndex > -1) {
@@ -46,12 +61,12 @@ export const MenPageContextProvider = ({ children }) => {
                 item.id === id && item.size === size && item.color === color
                     ? { ...item, quantity: item.quantity + amount }
                     : item
-            ).filter(item => item.quantity > 0); // Elimina artículos con cantidad <= 0
+            ).filter(item => item.quantity > 0);
         });
     };
 
     return (
-        <MenPageContext.Provider value={{ cartItems, clothingItems, addToCart, updateItemQuantity }}>
+        <MenPageContext.Provider value={{ cartItems, menClothingItems, womenClothingItems, addToCart, updateItemQuantity }}>
             {children}
         </MenPageContext.Provider>
     );

@@ -7,10 +7,12 @@
     font-size: 1.6vw;
     text-align: center;
     width: 36vw;
+    height: 36vw;
     align-items: center;
     padding: 1.5vw;
     position: relative;
     color: black;
+    margin-bottom: 20px;
 
     &--open {
         /* Modificador para cuando la barra de ropa está abierta */
@@ -24,6 +26,10 @@
         height: 100%;
         margin: auto;
     }
+
+    .slick-list {
+        height: 100%;
+      }
 
     &__slider-container {
         width: 100%;
@@ -49,7 +55,7 @@
 
     &__cart-icon {
         background-color: white;
-        width: 4.5vw;
+        width: 4.7vw;
         height: 4.2vw;
         border-radius: 5px;
         position: relative;
@@ -71,14 +77,13 @@
         background-color: rgba(255, 255, 255, 0);
         border-radius: 5px;
         right: 2.1vw;
-        top: 24.3vw;
-        height: 5.5vw;
+        top: 23.3vw;
         display: flex;
         flex-direction: column;
         text-align: center;
         justify-content: space-evenly;
         color: black;
-        height: 10vw;
+        height: 11vw;
 
 
     }
