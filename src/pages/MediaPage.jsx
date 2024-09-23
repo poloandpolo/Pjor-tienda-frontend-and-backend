@@ -9,7 +9,7 @@ export const MediaPage = () => {
     <div className='media-page'>
       <Header />
       <NavigationBar />
-    
+      <MediaMainSlider />
       <div className='media-page__leeve-breaks'>
         <h2>Sesión de garaje de Leeve Breaks</h2>
         <p>En la casa de uno de los integrantes de Leeve Breaks, un ambiente desenfadado y lleno de carácter se convierte en el escenario perfecto para grabar su nuevo EP, capturando la esencia cruda y auténtica de su música. Las paredes están adornadas con recuerdos de conciertos pasados, mientras que el eco de los tambores resonando en cada rincón crea una atmósfera electrizante y vibrante. La mezcla de sonidos se convierte en una experiencia sensorial que envuelve a todos los presentes.</p>
