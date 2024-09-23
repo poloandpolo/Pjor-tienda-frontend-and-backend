@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 export const MediaMainSlider = () => {
     const settings = {
-        dots: true, // Mostrar puntos de navegación
+        dots: false, // Mostrar puntos de navegación
         infinite: true, // Bucle infinito
         speed: 1200, // Velocidad de transición
         slidesToShow: 1, // Mostrar una imagen a la vez
