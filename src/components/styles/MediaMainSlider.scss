@@ -65,15 +65,7 @@
       .slick-slider {
         height: 100%;
          
-        .slick-prev, .slick-next {
-          
-          width: 0px; // Ancho de la flecha
-          height: 0px; // Alto de la flecha
-          background-color: rgba(0, 0, 0, 0); // Fondo semitransparente para las flechas
-          border-radius: 50%; // Hace que las flechas tengan un borde circular
-          z-index: 1; // Asegura que las flechas estén encima del contenido
-          color: white; // Color de la flecha
-        }
+
 
         
       }
