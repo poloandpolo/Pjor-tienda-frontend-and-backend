@@ -19,3 +19,19 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .separation-bar {
+        height: 28px;
+
+        &__image-wrapper {
+            width: 75px;
+            margin-right: 10px;
+
+            & img{
+                width: 75px;
+            }
+        }
+    }
+
+}
