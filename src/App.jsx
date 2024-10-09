@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { MediaPage } from './pages/MediaPage';
 import { WomenPage } from './pages/WomenPage'; // Importa el componente WomenPage
 import { VisionPage } from './pages/VisionPage'
+import { CrewPage } from './pages/CrewPage';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             </MenPageContextProvider>
           } />
           <Route path='media' element={<MediaPage />} />
+          <Route path='crew' element={<CrewPage />} />
           <Route path='vision' element={<VisionPage />} />
         </Routes>
       </BrowserRouter>

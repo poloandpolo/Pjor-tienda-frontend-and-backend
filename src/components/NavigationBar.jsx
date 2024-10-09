@@ -17,6 +17,10 @@ export const NavigationBar = () => {
     navigate('/media');
   };
 
+  const handleClickCrew = () => {
+    navigate('/crew');
+  };
+
   const handleClickVision = () => {
     navigate('/vision');
   };
@@ -30,7 +34,7 @@ export const NavigationBar = () => {
         <li className='navigation-bar__item'><a className='navigation-bar__link' onClick={handleClickMen}>Hombre</a></li>
         <li className='navigation-bar__item'><a className='navigation-bar__link' onClick={handleClickWomen}>Mujer</a></li>
         <li className='navigation-bar__item'><a className='navigation-bar__link'onClick={handleClickMedia}>Media</a></li>
-        <li className='navigation-bar__item'><a className='navigation-bar__link'>Crew</a></li>
+        <li className='navigation-bar__item'><a className='navigation-bar__link'onClick={handleClickCrew}>Crew</a></li>
         <li className='navigation-bar__item'><a className='navigation-bar__link' onClick={handleClickVision}>Vision</a></li>
       </ul>
     </nav>

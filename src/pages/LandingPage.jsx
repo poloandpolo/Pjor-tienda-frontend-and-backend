@@ -22,6 +22,14 @@ export const LandingPage = () => {
     navigate('/media');
   };
 
+  const handleClickCrew = () => {
+    navigate('/crew');
+  };
+
+  const handleClickVision = () => {
+    navigate('/vision');
+  };
+
   return (
     <div className='landing-page'>
       <LandingPageHeader />
@@ -33,8 +41,8 @@ export const LandingPage = () => {
         <LandingPageButton text={"Hombre"} onClick={handleClickMen}/>
         <LandingPageButton text={"Mujer"} onClick={handleClickWomen}/>
         <LandingPageButton text={"Media"} onClick={handleClickMedia}/>
-        <LandingPageButton text={"Crew "}/>
-        <LandingPageButton text={"Vision"}/>
+        <LandingPageButton text={"Crew "} onClick={handleClickCrew}/>
+        <LandingPageButton text={"Vision"} onClick={handleClickVision}/>
       </div>
     </div>
   );
