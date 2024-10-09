@@ -6,40 +6,43 @@
 
     &__first-section {
         width: 100vw;
-        height: 90vh; // Ajustado al tamaño de la imagen
-        margin: auto;
         display: flex;
 
-
-
         &-p-wrapper {
-            width: 65vw;
-            position: relative;
+            width: 70vw;
+            transform: translateY(8%) translateX(2%);
+
+            p {
+                font-size: 25px;
+                font-family: Barlow Condensed;
+                text-align: right;
+                color: black;
+                letter-spacing: 1.5px;
+                line-height: 42px;
+            }
+        }
+
+        &-logo-small-devices{
+            display: none;
         }
 
         &-logo-wrapper {
-            width: 35vw;
-            height: 100%;
+            width: 30vw;
+            height: 90vh;
             display: flex;
             overflow: hidden;
-            align-items: center;
-            position: relative;
-            justify-content: center;
-
+            
+            transform: translateX(5vw) translateY(0vw);
+            
 
             .vision-page__first-section-logo-1,
             .vision-page__first-section-logo-2,
             .vision-page__first-section-logo-3,
             .vision-page__first-section-logo-4 {
-                /* Aplíca la rotación de forma fija */
                 transform: rotate(90deg);
                 opacity: 1;
-                /* Inicialmente visibles */
                 position: absolute;
-                /* Asegúrate de que las imágenes estén posicionadas correctamente */
-                /* Solo animar la opacidad y el movimiento, sin la rotación */
-                animation: glitchEffect 35s infinite steps(50);
-
+                animation: glitchEffect 70s infinite steps(100);
             }
 
             .vision-page__first-section-logo-1 {
@@ -69,124 +72,81 @@
                 animation-delay: 0.9s;
             }
         }
-
-        & p {
-            top: 8.5%;
-            right: 4.5%;
-            width: 100%;
-            /* Asegúrate que el texto ocupe todo el espacio disponible */
-            max-width: 58vw;
-            /* Evita que sea más ancho que el contenedor */
-            
-            position: absolute;
-            font-family: 'Barlow Condensed';
-            color: black;
-            font-size: 23px;
-            text-align: right;
-            letter-spacing: 3px;
-           
-            /* Fuerza palabras a dividirse si es necesario */
-        }
     }
 }
 
-
-@media only screen and (min-width: 820px) and (max-width: 1024px) and (min-height: 1180px) and (max-height: 1366px) {
+/* Para dispositivos menores a 768px */
+@media (max-width: 768px) {
     .vision-page {
-        &__first-section {
-            height: 50vh;
-
-
+        &__first-section { 
+            display: flex;
+            flex-direction: column;
             &-p-wrapper {
+                width: 100vw;
+                transform: translateY(0) translateX(0);
 
-
-                & p {
+                p {
                     font-size: 20px;
+                    text-align: justify;
+                    padding: 10px 30px;
+                    line-height: 35px;
                 }
+            }
+
+            &-logo-small-devices{
+                width: 100vw;
+                height: 30vh;
+                display: inline;
+                img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    padding: 20px 30px;
+                }
+            }
+            &-logo-wrapper {
+                display: none;
             }
         }
     }
-
-
-    .vision-page__first-section-logo-wrapper {
-        height: 50vh;
-        transform: translateX(40px);
-
-
-    }
-
-
 }
 
-
-@media (max-width: 1200px) {
+/* Para iPad Pro específicamente, ajustado a un rango de ancho entre 768px y 1024px */
+@media (min-width: 769px) and (max-width: 1024px) and (max-height: 1366px) {
     .vision-page {
-        min-height: 140vh;
-    }
-    .vision-page__first-section-p-wrapper {
-        height: 60vh; /* Aumenta la altura del p-wrapper */
-    }
-}
+        &__first-section {
+            display: flex;
+            flex-direction: column;
+            &-p-wrapper {
+                width: 100vw;
+                transform: translateY(0) translateX(0);
 
-@media (max-width: 1024px) {
-    .vision-page {
-        min-height: 160vh;
-    }
-    .vision-page__first-section-p-wrapper {
-        height: 70vh; /* Aumenta más la altura en pantallas más pequeñas */
-    }
+                p {
+                    font-size: 35px;
+                    text-align: justify;
+                    padding: 10px 50px;
+                    line-height: 50px;
+                    letter-spacing: 5px;
+                }
+            }
 
-    .vision-page__first-section p {
-        font-size: 20px; /* Disminuye el tamaño del texto */
-    }
-}
-
-@media (max-width: 768px) {
-    .vision-page__first-section-p-wrapper {
-        height: 80vh; /* Aumenta la altura considerablemente en pantallas pequeñas */
-    }
-
-    .vision-page__first-section p {
-        font-size: 18px;
-        right: 2%; /* Ajusta la posición del texto */
-    }
-}
-
-@media (max-width: 480px) {
-    .vision-page__first-section-p-wrapper {
-        height: 90vh; /* Máxima altura para el p-wrapper en pantallas muy pequeñas */
-    }
-
-    .vision-page__first-section p {
-        font-size: 16px; /* Reducimos aún más el tamaño del texto */
-    }
-}
-
-@media (max-width: 768px) {
-
-    .vision-page__first-section-p-wrapper{
-        width: 100vw;
-        height: 100vh;
-        margin: 0 20px;
-        
-        
-
-        & p{
-            margin: auto;
-            text-align: justify;
-            top: 0;
-            max-width: 95%;
-            
+            &-logo-small-devices{
+                width: 100vw;
+                height: 30vh;
+                display: inline;
+                img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    padding: 20px 50px;
+                }
+            }
+            &-logo-wrapper {
+                display: none;
+            }
         }
     }
-    .vision-page__first-section-logo-wrapper{
-        display: none;
-    }
 }
-
-
-
-
 
 
 
