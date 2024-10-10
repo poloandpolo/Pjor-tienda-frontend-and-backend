@@ -12,7 +12,34 @@
             width: 90%;
             height: 90%;
             object-fit: cover;
-            border-radius: 10px;
+            border-radius: 5px;
         }
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .crew-card{
+        width: 80vw;
+        height: 85vw;
+
+        &__card-wrapper{
+            width: 80vw;
+            height: 80vw;
+        }
+
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .crew-card{
+        width: 100vw;
+        height: 100vw;
+
+        &__card-wrapper{
+            width: 86vw;
+            height: 86vw;
+            font-size: 6vw;
+        }
+
     }
 }
