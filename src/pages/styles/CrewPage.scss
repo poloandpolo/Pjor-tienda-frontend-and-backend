@@ -7,10 +7,10 @@
     &__cards-gallery{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        width: 100vw;
+        width: 55%;
         gap:10%;
         transform: translateY(20px);
-        padding-left: 5.5%;
+        padding-left: 2.5%;
     }
 }
 

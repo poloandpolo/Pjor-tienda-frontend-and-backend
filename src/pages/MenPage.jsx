@@ -11,6 +11,7 @@ import { ShoppingCart } from '../components/ShoppingCart';
 import { ClothingModal } from '../components/ClothingModal';
 import { ConfirmationModal } from '../components/ConfirmationModal';
 import { WarningModal } from '../components/WarningModal'; // Asegúrate de que el nombre coincida con tu archivo
+import { Footer } from '../components/Footer';
 
 const dropdownMenus = [
   {
@@ -136,6 +137,7 @@ export const MenPage = () => {
           onConfirm={openConfirmationModal}
           onWarning={openWarningModal}
         />
+        <Footer/>
       </div>
     </div>
   );
