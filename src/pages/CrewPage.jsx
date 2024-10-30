@@ -5,6 +5,7 @@ import './styles/CrewPage.scss'
 import { CrewCard } from '../components/CrewCard'
 import Agustin from '../images/crew/Agustin.jpg'
 import Guillermo from '../images/crew/Guillermo.jpg'
+import { Footer } from '../components/Footer'
 
 export const CrewPage = () => {
     return (
@@ -15,6 +16,7 @@ export const CrewPage = () => {
                 <CrewCard img={Agustin} name='Agustin Condado' />
                 <CrewCard img={Guillermo} name='Guillermo Serrano' />
             </div>
+            <Footer/>
         </div>
     )
 }

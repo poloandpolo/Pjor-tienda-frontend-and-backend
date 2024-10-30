@@ -3,6 +3,7 @@ import './styles/VisionPage.scss'
 import { Header } from '../components/Header'
 import { NavigationBar } from '../components/NavigationBar'
 import logo from '/logo.png'
+import { Footer } from '../components/Footer'
 
 export const VisionPage = () => {
     return (
@@ -25,6 +26,8 @@ export const VisionPage = () => {
                     <img className='vision-page__first-section-logo-4' src={logo} alt="" />
                 </div>
             </div>
+            <Footer/>
         </div>
+        
     )
 }

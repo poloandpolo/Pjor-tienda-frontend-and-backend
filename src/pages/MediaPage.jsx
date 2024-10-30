@@ -4,6 +4,7 @@ import { Header } from '../components/Header';
 import { NavigationBar } from '../components/NavigationBar';
 import { MediaMainSlider } from '../components/MediaMainSlider';
 import { SeparationBar } from '../components/SeparationBar';
+import { Footer } from '../components/Footer';
 
 export const MediaPage = () => {
   const leeveBreaksRef = useRef(null);
@@ -68,6 +69,7 @@ export const MediaPage = () => {
         <p className='media-page__paragraph'>A medida que avanzan las rondas, los trucos se vuelven más audaces. Desde ollies perfectos hasta flips y grinds que desafían la gravedad, cada skater aporta su estilo y técnica, con movimientos que parecen desafiar las leyes de la física. Con cada maniobra exitosa, la multitud estalla en aplausos y vítores, convirtiendo el parque en una fiesta de talento y pasión por el skate. Cada caída, lejos de desanimar, motiva a los competidores a levantarse y seguir intentando, reflejando la resiliencia y el espíritu inquebrantable de esta cultura.</p>
         <p className='media-page__paragraph'>Al final del concurso, la camaradería entre los participantes es palpable. Las bromas y felicitaciones se cruzan en el ambiente, mientras los ganadores celebran con modestia y los demás reciben el reconocimiento por su esfuerzo y destreza. En este evento, no solo se trata de ganar, sino de la pasión compartida por el skate, la conexión entre los riders y el respeto mutuo que se genera sobre las tablas. El Skatepark, ese espacio urbano que en otros días es un simple lugar de recreo, se transforma en el epicentro de una comunidad que vive y respira por el skateboarding.</p>
       </div>
+      <Footer/>
     </div>
   );
 };

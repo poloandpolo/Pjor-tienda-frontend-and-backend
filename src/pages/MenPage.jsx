@@ -137,8 +137,8 @@ export const MenPage = () => {
           onConfirm={openConfirmationModal}
           onWarning={openWarningModal}
         />
-        <Footer/>
       </div>
+      <Footer/>
     </div>
   );
 };
