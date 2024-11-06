@@ -12,6 +12,8 @@ import { ClothingModal } from '../components/ClothingModal';
 import { ConfirmationModal } from '../components/ConfirmationModal';
 import { WarningModal } from '../components/WarningModal'; // Asegúrate de que el nombre coincida con tu archivo
 import { Footer } from '../components/Footer';
+import { AccountButton } from '../components/AccountButton';
+import { AccountModal } from '../components/AccountModal';
 
 const dropdownMenus = [
   {
@@ -48,8 +50,14 @@ export const MenPage = () => {
   const [clothingModalData, setClothingModalData] = useState(null);
   const [isWarningModalOpen, setIsWarningModalOpen] = useState(false);
   const [isConfirmationModalOpen, setIsConfirmationModalOpen] = useState(false);
+  const [isAccountModalVisible, setIsAccountModalVisible] = useState(false); // Nuevo estado para mostrar el modal
+
 
   const { menClothingItems } = useMenPageContext();
+
+  const toggleAccountModal = () => {
+    setIsAccountModalVisible(prevState => !prevState); // Cambiar la visibilidad del modal
+  };
 
   const toggleClothingBar = () => {
     setIsClothingBarOpen(prevState => !prevState);
@@ -100,6 +108,14 @@ export const MenPage = () => {
             isOpen={isClothingBarOpen}
           />
         )}
+        <AccountModal 
+        isVisible={isAccountModalVisible}
+        onClose={toggleAccountModal}
+         />
+        <AccountButton
+          isOpen={isClothingBarOpen}
+          onClick={toggleAccountModal}
+        />
         <ShoppingCartButton
           onClick={openShoppingCart}
           isOpen={isClothingBarOpen}
@@ -138,7 +154,7 @@ export const MenPage = () => {
           onWarning={openWarningModal}
         />
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

@@ -1,7 +1,7 @@
-.Footer {
+.footer {
     background-color: black;
     margin-top: 50px;
-    height: 180px;
+    height: 165px;
     width: 100vw;
     display: flex;
     color: white;
@@ -51,8 +51,8 @@
 }
 
 @media (max-width: 768px) {
-    .Footer {
-        height: 135px;
+    .footer {
+        height: 125px;
         margin-top: 30pxs;
         &__content-wrapper{
             padding: 45px;

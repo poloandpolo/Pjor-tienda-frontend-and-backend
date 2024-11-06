@@ -1,9 +1,9 @@
-.shopping-cart-button {
+.account-button {
     &__icon {
       position: fixed;
       background-color: white;
       padding: 2px;
-      top: 50%;
+      top: 12%;
       left: 0;
       transform: translateY(120%);
       
@@ -25,7 +25,7 @@
   }
 
   @media only screen and (min-width: 820px) and (max-width: 1024px) and (min-height: 1180px) and (max-height: 1366px) {
-    .shopping-cart-button{
+    .account-button{
       &__icon{
         height: 6vw;
         width: 6vw;
